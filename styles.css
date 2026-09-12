@@ -135,3 +135,54 @@ html{scroll-behavior:smooth;scroll-padding-top:92px}
   .footer-brand img{width:220px;height:78px}.footer-bottom{white-space:normal}
   .floating-cta{max-width:calc(100vw - 28px);right:14px;bottom:14px}
 }
+
+
+/* V4 — refinamento mobile e alinhamento visual */
+.hero h1 .keep-together{color:inherit}
+.footer-name{display:block;font-family:Montserrat,Arial,sans-serif;font-size:26px;line-height:1.1;color:#fff;margin:0 0 16px;letter-spacing:-.02em}
+
+@media (max-width:620px){
+  /* Hero: evita palavra órfã e mantém ritmo de leitura */
+  .hero{padding:38px 0 48px}
+  .hero h1{font-size:clamp(31px,9.1vw,38px);line-height:1.08;letter-spacing:-.04em;margin-bottom:20px}
+  .hero h1 .keep-together{white-space:nowrap}
+  .lead{font-size:17px;line-height:1.6}
+
+  /* Faixa de serviços: tipografia maior e divisórias simétricas */
+  .quick-strip .container{width:100%}
+  .strip-grid{grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid rgba(255,255,255,.14);border-bottom:1px solid rgba(255,255,255,.14)}
+  .strip-grid span{display:flex;align-items:center;justify-content:center;min-height:72px;padding:16px 10px;font-size:17px;line-height:1.2;text-align:center;border-right:1px solid rgba(255,255,255,.16);border-bottom:1px solid rgba(255,255,255,.16)}
+  .strip-grid span:nth-child(even){border-right:0}
+  .strip-grid span:nth-last-child(-n+2){border-bottom:0}
+
+  /* Cards: quebras explícitas em duas linhas sem palavras coladas */
+  .benefit h3,.step h3{font-size:23px;line-height:1.2;min-height:auto;margin:14px 0 12px}
+  .benefit h3 br,.step h3 br{display:block!important}
+  .benefit p,.step p{font-size:16px;line-height:1.55}
+  .benefit,.step{padding:26px 22px}
+  .benefit strong{font-size:30px}
+
+  /* Regiões: grade regular, mesma largura e altura */
+  .regions-grid{gap:30px}
+  .region-tags{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;width:100%}
+  .region-tags span{display:flex;align-items:center;justify-content:center;text-align:center;width:100%;min-height:58px;padding:10px 12px;border-radius:14px;font-size:14px;line-height:1.25}
+
+  /* Rodapé sem logo gráfica: marca textual limpa */
+  .footer{padding-top:46px}
+  .footer-brand img{display:none!important}
+  .footer-name{font-size:28px;margin-bottom:14px}
+  .footer-grid{gap:34px}
+  .footer-bottom{display:block;white-space:normal;margin-top:30px;padding-top:16px}
+  .footer-bottom span{display:inline!important;margin:0!important}
+
+  /* CTA flutuante mais compacto para não cobrir conteúdo */
+  .floating-cta{right:12px;bottom:12px;padding:10px 14px;font-size:12px;max-width:190px}
+}
+
+@media (max-width:380px){
+  .hero h1{font-size:30px}
+  .hero h1 .keep-together{white-space:normal}
+  .region-tags{grid-template-columns:1fr 1fr}
+  .region-tags span{font-size:13px;padding:9px 8px}
+  .benefit h3,.step h3{font-size:21px}
+}
