@@ -26,9 +26,9 @@
       <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
       <nav class="main-nav" aria-label="Navegação principal">
         <a href="#quem-somos">Quem Somos</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#diferenciais">Por que a DNA</a>
-        <a href="#atendimento">Atendimento</a>
+        <a href="#servicos">Soluções</a>
+        <a href="#diferenciais">Por Que a DNA</a>
+        <a href="#nosso-trabalho">Galeria</a>
         <a href="#regioes">Regiões</a>
         <a href="#faq">Dúvidas</a>
         <a class="btn btn-small" href="https://wa.me/5548996865570?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site.%20Preciso%20de%20atendimento%21" target="_blank" rel="noopener">Solicitar atendimento</a>
@@ -41,8 +41,8 @@
       <div class="container hero-grid">
         <div class="hero-copy">
           <span class="eyebrow">MANUTENÇÃO PREDIAL INTEGRADA</span>
-          <h1>Manutenção predial que blinda seu patrimônio <span class="keep-together">contra imprevistos.</span></h1>
-          <p class="lead">A inteligência preventiva que protege sua casa, condomínio ou comércio 24h por dia.</p>
+          <h1 class="hero-title"><span>Manutenção predial que</span><span>blinda seu patrimônio</span><span>contra imprevistos.</span></h1>
+          <p class="lead hero-subtitle"><span>A inteligência preventiva que protege sua casa,</span><span>condomínio ou comércio 24h por dia.</span></p>
           <div class="hero-actions">
             <a class="btn" href="https://wa.me/5548996865570?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site.%20Preciso%20de%20atendimento%21" target="_blank" rel="noopener">Solicitar atendimento</a>
             <a class="btn btn-outline" href="#servicos">Conhecer os serviços</a>
@@ -80,11 +80,11 @@
       </div>
     </section>
 
-    <section class="section" id="servicos">
+    <section class="section section-services" id="servicos">
       <div class="container">
         <div class="section-head">
           <span class="eyebrow">SOLUÇÕES</span>
-          <h2>Todas as manutenções do seu imóvel, com um único prestador.</h2>
+          <h2 class="solutions-title"><span>Todas as manutenções do seu imóvel,</span><span>com um único prestador.</span></h2>
           <p>Com um prestador comum, um reparo pode exigir eletricista, marceneiro, gesseiro, instalador de ar condicionado e outros profissionais. Com a Sistema DNA, você centraliza a execução em um único contrato.</p>
         </div>
 
@@ -147,7 +147,7 @@
       </div>
     </section>
 
-    <section class="section preventive">
+    <section class="section preventive" id="manutencao-preventiva">
       <div class="container preventive-grid">
         <div class="preventive-visual"><img src="assets/preventiva.svg" alt="Ilustração provisória de inspeção preventiva" /></div>
         <div>
@@ -180,7 +180,7 @@
       </div>
     </section>
 
-    <section class="section process" id="atendimento">
+    <section class="section process section-process" id="atendimento">
       <div class="container">
         <div class="section-head">
           <span class="eyebrow">COMO FUNCIONA</span>
@@ -195,35 +195,50 @@
       </div>
     </section>
 
-    <section class="section gallery-section">
+    <section class="section gallery-section" id="nosso-trabalho">
       <div class="container">
         <div class="section-head left">
           <span class="eyebrow">NOSSO TRABALHO</span>
-          <h2>Espaço preparado para fotos reais da Sistema DNA</h2>
-          <p>Quando você tiver as imagens, substituiremos estes exemplos por equipe, serviços executados, quadros, bombas, climatização, condomínios, residências e empresas.</p>
+          <h2>Nosso trabalho no dia a dia</h2>
+          <p>Registros reais de obras, manutenções e instalações executadas pela nossa equipe em campo.</p>
         </div>
-        <div class="gallery-grid">
-          <img src="assets/galeria-eletrica.svg" alt="Exemplo provisório: serviço elétrico" />
-          <img src="assets/galeria-predial.svg" alt="Exemplo provisório: manutenção predial" />
-          <img src="assets/galeria-equipe.svg" alt="Exemplo provisório: equipe em atendimento" />
+        <div class="gallery-carousel" aria-label="Galeria de serviços realizados pela Sistema DNA">
+          <button class="gallery-arrow gallery-prev" type="button" aria-label="Foto anterior">‹</button>
+          <div class="gallery-track" tabindex="0">
+            <figure class="gallery-slide"><img src="assets/real/servico-01.png" alt="Profissional em obra analisando projeto e infraestrutura em execução" loading="lazy"></figure>
+            <figure class="gallery-slide"><img src="assets/real/servico-02.png" alt="Profissional realizando serviço técnico em fachada comercial" loading="lazy"></figure>
+            <figure class="gallery-slide"><img src="assets/real/servico-03.png" alt="Infraestrutura elétrica com eletrodutos em instalação" loading="lazy"></figure>
+            <figure class="gallery-slide"><img src="assets/real/servico-04.png" alt="Técnico realizando medição em painel elétrico industrial" loading="lazy"></figure>
+            <figure class="gallery-slide"><img src="assets/real/servico-05.png" alt="Profissional executando montagem de quadro elétrico" loading="lazy"></figure>
+            <figure class="gallery-slide"><img src="assets/real/servico-06.png" alt="Técnico trabalhando em painel elétrico industrial" loading="lazy"></figure>
+            <figure class="gallery-slide"><img src="assets/real/servico-07.png" alt="Cabeamento elétrico organizado com conectores e eletrodutos" loading="lazy"></figure>
+            <figure class="gallery-slide"><img src="assets/real/servico-08.png" alt="Profissional em manutenção técnica de infraestrutura industrial" loading="lazy"></figure>
+          </div>
+          <button class="gallery-arrow gallery-next" type="button" aria-label="Próxima foto">›</button>
+          <div class="gallery-dots" aria-label="Navegação da galeria"></div>
         </div>
       </div>
     </section>
 
-    <section class="section section-soft" id="regioes">
-      <div class="container regions-grid">
-        <div>
+    <section class="section section-soft section-regions" id="regioes">
+      <div class="container">
+        <div class="section-head left regional-head">
           <span class="eyebrow">GRANDE FLORIANÓPOLIS</span>
           <h2>Atendimento regional</h2>
           <p>A Sistema DNA atende a região com foco em residências, condomínios e empresas.</p>
         </div>
-        <div class="region-tags" aria-label="Cidades atendidas">
-          <span>Florianópolis</span><span>São José</span><span>Palhoça</span><span>Biguaçu</span><span>Santo Amaro da Imperatriz</span><span>Tijucas</span><span>Águas Mornas</span><span>Antônio Carlos</span><span>Governador Celso Ramos</span><span>São Pedro de Alcântara</span><span>Rancho Queimado</span><span>Paulo Lopes</span>
+        <div class="regional-layout">
+          <div class="region-tags" aria-label="Cidades atendidas">
+            <span>Florianópolis</span><span>São José</span><span>Palhoça</span><span>Biguaçu</span><span>Santo Amaro da Imperatriz</span><span>Tijucas</span><span>Águas Mornas</span><span>Antônio Carlos</span><span>Governador Celso Ramos</span><span>Rancho Queimado</span>
+          </div>
+          <div class="map-frame">
+            <iframe title="Mapa da Grande Florianópolis atendida pela Sistema DNA" src="https://www.google.com/maps?q=Grande%20Florian%C3%B3polis%2C%20SC&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section testimonials">
+    <section class="section testimonials section-testimonials">
       <div class="container">
         <div class="section-head">
           <span class="eyebrow">AVALIAÇÕES</span>
