@@ -738,3 +738,93 @@ main > .cta-section {
     font-size: 13px;
   }
 }
+
+
+/* =========================================================
+   V12 — correções EXCLUSIVAS para mobile (<= 768px)
+   Desktop permanece inalterado.
+   ========================================================= */
+@media (max-width: 768px) {
+  /* 1) Hero visual: garante que o mesmo card/imagem do desktop seja renderizado no mobile */
+  .hero-visual {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    max-width: 560px !important;
+    margin: 26px auto 0 !important;
+    overflow: visible !important;
+  }
+  .hero-visual img {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    min-height: 0 !important;
+    object-fit: contain !important;
+    object-position: center !important;
+  }
+  .hero-visual .visual-badge {
+    display: block !important;
+  }
+
+  /* 2) Escala única para TODOS os H2 no mobile */
+  h2,
+  .section h2,
+  .section-head h2,
+  .section-head.left h2,
+  .intro-section h2,
+  .preventive-grid h2,
+  .cta-section h2,
+  .solutions-title {
+    font-size: 26px !important;
+    line-height: 1.16 !important;
+    letter-spacing: -0.025em !important;
+    max-width: 24ch !important;
+    width: auto !important;
+    text-wrap: balance !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+    hyphens: none !important;
+  }
+
+  /* No mobile, títulos com spans deixam de ter quebra fixa */
+  .solutions-title > span {
+    display: inline !important;
+    white-space: normal !important;
+  }
+  .solutions-title > span:first-child::after {
+    content: " " !important;
+  }
+
+  /* 3) Cards: remove as quebras manuais no mobile sem juntar palavras */
+  .benefit h3 br,
+  .step h3 br {
+    display: none !important;
+  }
+  .benefit h3,
+  .step h3 {
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+    hyphens: none !important;
+    text-wrap: balance !important;
+  }
+}
+
+/* Ajuste fino apenas para celulares de 375–414px */
+@media (min-width: 360px) and (max-width: 430px) {
+  h2,
+  .section h2,
+  .section-head h2,
+  .section-head.left h2,
+  .intro-section h2,
+  .preventive-grid h2,
+  .cta-section h2,
+  .solutions-title {
+    font-size: 25px !important;
+    max-width: 25ch !important;
+  }
+}
