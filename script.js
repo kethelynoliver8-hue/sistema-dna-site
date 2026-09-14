@@ -186,9 +186,52 @@ form?.addEventListener('submit', (e) => {
     gallery.addEventListener('mouseleave', () => { paused = false; });
     gallery.addEventListener('focusin', () => { paused = true; });
     gallery.addEventListener('focusout', () => { paused = false; });
-    gallery.addEventListener('touchstart', () => { paused = true; }, { passive: true });
-    gallery.addEventListener('touchend', () => { paused = false; }, { passive: true });
-    window.addEventListener('resize', updateDots);
+
+    // Mobile: não captura o scroll vertical. O browser fica responsável pelo pan-y;
+    // um gesto horizontal claro avança/volta uma foto sem preventDefault().
+    let swipeStartX = 0;
+    let swipeStartY = 0;
+    let swipePointerId = null;
+    track?.addEventListener('pointerdown', (e) => {
+      if (e.pointerType !== 'touch' && e.pointerType !== 'pen') return;
+      swipePointerId = e.pointerId;
+      swipeStartX = e.clientX;
+      swipeStartY = e.clientY;
+      paused = true;
+    }, { passive: true });
+    track?.addEventListener('pointerup', (e) => {
+      if (swipePointerId !== e.pointerId) return;
+      const dx = e.clientX - swipeStartX;
+      const dy = e.clientY - swipeStartY;
+      if (Math.abs(dx) >= 42 && Math.abs(dx) > Math.abs(dy) * 1.15) {
+        scrollToSlide(currentIndex() + (dx < 0 ? 1 : -1));
+      }
+      swipePointerId = null;
+      window.setTimeout(() => { paused = false; }, 350);
+    }, { passive: true });
+    track?.addEventListener('pointercancel', () => {
+      swipePointerId = null;
+      paused = false;
+    }, { passive: true });
+
+    // Autoplay só roda quando a galeria está visível e a página não está sendo rolada.
+    let galleryVisible = true;
+    if ('IntersectionObserver' in window) {
+      const galleryVisibilityObserver = new IntersectionObserver(([entry]) => {
+        galleryVisible = !!entry?.isIntersecting;
+        paused = !galleryVisible;
+      }, { threshold: 0.12 });
+      galleryVisibilityObserver.observe(gallery);
+    }
+    let pageScrollTimer = null;
+    window.addEventListener('scroll', () => {
+      if (!galleryVisible) return;
+      paused = true;
+      clearTimeout(pageScrollTimer);
+      pageScrollTimer = setTimeout(() => { paused = false; }, 420);
+    }, { passive: true });
+
+    window.addEventListener('resize', updateDots, { passive: true });
     startAuto();
   }
 })();

@@ -828,3 +828,61 @@ main > .cta-section {
     max-width: 25ch !important;
   }
 }
+
+
+/* =========================================================
+   V14 — correções de interação da galeria, avatares e rodapé
+   ========================================================= */
+
+/* Galeria: scroll vertical da página tem prioridade no touch.
+   O swipe horizontal é tratado pelo JS sem preventDefault. */
+.gallery-track {
+  touch-action: pan-y pinch-zoom !important;
+  overscroll-behavior-y: auto !important;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+}
+.gallery-carousel,
+.gallery-slide {
+  touch-action: pan-y pinch-zoom;
+}
+
+/* Avatares das avaliações */
+.testimonial-grid cite {
+  display: flex !important;
+  align-items: center;
+  gap: 10px;
+}
+.testimonial-avatar {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(244,197,66,.18);
+  border: 1px solid rgba(201,154,0,.28);
+  color: #9a7400;
+}
+.testimonial-avatar svg {
+  width: 21px;
+  height: 21px;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.testimonial-avatar-company {
+  background: rgba(244,197,66,.18);
+  border-color: rgba(201,154,0,.28);
+  color: #9a7400;
+}
+
+/* Rodapé uniforme: remove qualquer filete residual na transição e dentro do footer */
+main > .cta-section:last-child { border-bottom: 0 !important; }
+.footer {
+  border-top: 0 !important;
+  outline: 0 !important;
+  margin-top: 0 !important;
+}
+.footer-bottom { border-top: 0 !important; }
